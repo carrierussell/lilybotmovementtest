@@ -4,13 +4,13 @@ namespace Lilybot.movement {
     //%motorSpeedB.min=0 motorSpeedB.max=100
     //%motorTimeB.min=0 motorTimeB.max=10 
 export function goBackward(motorSpeedB: number, motorTimeB: number) {
-    pins.analogWritePin(AnalogPin.P0, motorSpeedB)
+    pins.analogWritePin(AnalogPin.P0, motorSpeedB*102.3)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.analogWritePin(AnalogPin.P1, motorSpeedB)
+    pins.analogWritePin(AnalogPin.P1, motorSpeedB*102.3)
     pins.digitalWritePin(DigitalPin.P15, 0)
     pins.digitalWritePin(DigitalPin.P16, 1)
-    basic.pause(motorTimeB)
+    basic.pause(motorTimeB*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
@@ -23,13 +23,13 @@ export function goBackward(motorSpeedB: number, motorTimeB: number) {
     //%motorSpeedF.min=0 motorSpeedF.max=100
     //%motorTimeF.min=0 motorTimeF.max=10 
 export function goForward(motorSpeedF: number, motorTimeF: number) {
-    pins.analogWritePin(AnalogPin.P0, motorSpeedF)
+    pins.analogWritePin(AnalogPin.P0, motorSpeedF*102.3)
     pins.digitalWritePin(DigitalPin.P8, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.analogWritePin(AnalogPin.P1, motorSpeedF)
+    pins.analogWritePin(AnalogPin.P1, motorSpeedF*102.3)
     pins.digitalWritePin(DigitalPin.P15, 1)
     pins.digitalWritePin(DigitalPin.P16, 0)
-    basic.pause(motorTimeF)
+    basic.pause(motorTimeF*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
@@ -42,13 +42,13 @@ export function goForward(motorSpeedF: number, motorTimeF: number) {
     //%motorSpeedR.min=0 motorSpeedR.max=100
     //%motorTimeR.min=0 motorTimeR.max=10 
 export function goRight(motorSpeedR: number, motorTimeR: number) {
-    pins.analogWritePin(AnalogPin.P0, motorSpeedR)
+    pins.analogWritePin(AnalogPin.P0, motorSpeedR*102.3)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.analogWritePin(AnalogPin.P1, motorSpeedR)
+    pins.analogWritePin(AnalogPin.P1, motorSpeedR*102.3)
     pins.digitalWritePin(DigitalPin.P15, 1)
     pins.digitalWritePin(DigitalPin.P16, 0)
-    basic.pause(motorTimeR)
+    basic.pause(motorTimeR*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
@@ -61,13 +61,13 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
     //%motorSpeedL.min=0 motorSpeedL.max=100
     //%motorTimeL.min=0 motorTimeL.max=10 
     export function goLeft(motorSpeedL: number, motorTimeL: number) {
-        pins.analogWritePin(AnalogPin.P0, motorSpeedL)
+        pins.analogWritePin(AnalogPin.P0, motorSpeedL*102.3)
         pins.digitalWritePin(DigitalPin.P8, 1)
         pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.analogWritePin(AnalogPin.P1, motorSpeedL)
+        pins.analogWritePin(AnalogPin.P1, motorSpeedL*102.3)
         pins.digitalWritePin(DigitalPin.P15, 0)
         pins.digitalWritePin(DigitalPin.P16, 1)
-        basic.pause(motorTimeL)
+        basic.pause(motorTimeL*1000)
         pins.digitalWritePin(DigitalPin.P8, 0)
         pins.digitalWritePin(DigitalPin.P13, 0)
         pins.analogWritePin(AnalogPin.P0, 0)
