@@ -19,7 +19,11 @@ export function goBackward(motorSpeed: number, motorTime: number) {
     pins.digitalWritePin(DigitalPin.P16, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
-
+ //%blockId=Lilybot_Movement
+    //%block="Forward at $index speed for"
+    //%index.min=0 index.max=100
+    //% "$secindex "
+    //%secindex.min=0 secindex.max=10 
 export function goForward(motorSpeed2: number, motorTime2: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeed2)
     pins.digitalWritePin(DigitalPin.P8, 1)
