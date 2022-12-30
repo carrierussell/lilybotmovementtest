@@ -2,7 +2,7 @@ namespace Lilybot.movement{
 
 let calculatedDistance = 0
 let echoTime = 0
-
+//% blockId=Lilybotultrasonic
 export function getDistance() {
     pins.digitalWritePin(DigitalPin.P13, 1)
     basic.pause(100)
@@ -11,7 +11,7 @@ export function getDistance() {
     calculatedDistance = echoTime / 148
     return calculatedDistance
 }
-
+//% blockId=LilybotBackward
 export function goBackward (motorSpeed: number, motorTime: number) {
     basic.showString("B")
     pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
