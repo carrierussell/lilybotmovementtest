@@ -1,5 +1,4 @@
-//%icon="e04b"
-//%color=#00008b
+//%color=#00008b icon="\e04b"
 namespace Lilybot.movement {
     //%blockId=Lilybot_MovementB
     //%block="Backward at $motorSpeedB speed for $motorTimeB sec"
