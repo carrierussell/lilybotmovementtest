@@ -3,6 +3,7 @@ namespace Lilybot.movement {
     //%block="Backward at $motorSpeedB speed for $motorTimeB sec"
     //%motorSpeedB.min=0 motorSpeedB.max=100
     //%motorTimeB.min=0 motorTimeB.max=10 
+    //% color=#00008b icon="\uf185"
 export function goBackward(motorSpeedB: number, motorTimeB: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeedB*10.23)
     pins.digitalWritePin(DigitalPin.P8, 0)
