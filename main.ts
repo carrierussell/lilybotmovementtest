@@ -1,5 +1,5 @@
 namespace Lilybot.movement {
-    //%blockId=Lilybot_Movement
+    //%blockId=Lilybot_MovementB
     //%block="Backward at $index speed for"
     //%index.min=0 index.max=100
     //% "$secindex "
@@ -19,7 +19,7 @@ export function goBackward(motorSpeed: number, motorTime: number) {
     pins.digitalWritePin(DigitalPin.P16, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
- //%blockId=Lilybot_Movement
+ //%blockId=Lilybot_MovementF
     //%block="Forward at $index speed for"
     //%index.min=0 index.max=100
     //% "$secindex "
@@ -39,7 +39,7 @@ export function goForward(motorSpeed2: number, motorTime2: number) {
     pins.digitalWritePin(DigitalPin.P16, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
-//%blockId=Lilybot_Movement
+//%blockId=Lilybot_MovementR
     //%block="Right at $index speed for"
     //%index.min=0 index.max=100
     //% "$secindex "
@@ -59,7 +59,7 @@ export function goRight(motorSpeed3: number, motorTime3: number) {
     pins.digitalWritePin(DigitalPin.P16, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
-    //%blockId=Lilybot_Movement
+    //%blockId=Lilybot_MovementL
     //%block="Left at $index speed for"
     //%index.min=0 index.max=100
     //% "$secindex "
