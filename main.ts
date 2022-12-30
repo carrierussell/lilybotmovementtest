@@ -12,6 +12,9 @@ export function getDistance() {
     return calculatedDistance
 }
 //% blockId=LilybotBackward
+//% block= "Backward at $index speed, for $secindex sec"
+//% index.min=0 index.max=100
+//% secindex.min=0 index.max=10
 export function goBackward (motorSpeed: number, motorTime: number) {
     basic.showString("B")
     pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
