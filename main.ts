@@ -1,9 +1,10 @@
+ //% color=#00008b icon="\e04b"
 namespace Lilybot.movement {
     //%blockId=Lilybot_MovementB
     //%block="Backward at $motorSpeedB speed for $motorTimeB sec"
     //%motorSpeedB.min=0 motorSpeedB.max=100
     //%motorTimeB.min=0 motorTimeB.max=10 
-    //% color=#00008b icon="\uf185"
+    //% color=#00008b"
 export function goBackward(motorSpeedB: number, motorTimeB: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeedB*10.23)
     pins.digitalWritePin(DigitalPin.P8, 0)
@@ -23,6 +24,7 @@ export function goBackward(motorSpeedB: number, motorTimeB: number) {
     //%block="Forward at $motorSpeedF speed for $motorTimeF sec"
     //%motorSpeedF.min=0 motorSpeedF.max=100
     //%motorTimeF.min=0 motorTimeF.max=10 
+     //% color=#00008b"
 export function goForward(motorSpeedF: number, motorTimeF: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeedF*10.23)
     pins.digitalWritePin(DigitalPin.P8, 1)
@@ -42,6 +44,7 @@ export function goForward(motorSpeedF: number, motorTimeF: number) {
     //%block="Right at $motorSpeedR speed for $motorTimeR sec"
     //%motorSpeedR.min=0 motorSpeedR.max=100
     //%motorTimeR.min=0 motorTimeR.max=10 
+     //% color=#00008b"
 export function goRight(motorSpeedR: number, motorTimeR: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeedR*10.23)
     pins.digitalWritePin(DigitalPin.P8, 0)
@@ -61,6 +64,7 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
     //%block="Left at $motorSpeedL speed for $motorTimeL sec"
     //%motorSpeedL.min=0 motorSpeedL.max=100
     //%motorTimeL.min=0 motorTimeL.max=10 
+     //% color=#00008b"
     export function goLeft(motorSpeedL: number, motorTimeL: number) {
         pins.analogWritePin(AnalogPin.P0, motorSpeedL*10.23)
         pins.digitalWritePin(DigitalPin.P8, 1)
@@ -78,6 +82,7 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
     }
     //%blockId=Lilybot_MovementD
     //%block="ultrasonic distance"
+     //% color=#00008b"
     export function getDistance(){
         pins.digitalWritePin(DigitalPin.P19,1)
         basic.pause(10)
