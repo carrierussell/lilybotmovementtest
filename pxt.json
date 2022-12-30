@@ -8,7 +8,6 @@
         "motorbit": "github:tinkertanker/pxt-motorbit#v2.0.0"
     },
     "files": [
-        "main.blocks",
         "main.ts",
         "README.md",
         "main.py"

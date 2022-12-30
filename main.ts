@@ -1,4 +1,9 @@
-function getDistance () {
+namespace Lilybot.movement{
+
+let calculatedDistance = 0
+let echoTime = 0
+
+export function getDistance() {
     pins.digitalWritePin(DigitalPin.P13, 1)
     basic.pause(100)
     pins.digitalWritePin(DigitalPin.P13, 0)
@@ -6,7 +11,8 @@ function getDistance () {
     calculatedDistance = echoTime / 148
     return calculatedDistance
 }
-function goBackward (motorSpeed: number, motorTime: number) {
+
+export function goBackward (motorSpeed: number, motorTime: number) {
     basic.showString("B")
     pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
     pins.digitalWritePin(DigitalPin.P8, 0)
@@ -23,7 +29,7 @@ function goBackward (motorSpeed: number, motorTime: number) {
     pins.analogWritePin(AnalogPin.P1, 0)
     basic.clearScreen()
 }
-function goForward (motorSpeed: number, motorTime: number) {
+export function goForward (motorSpeed: number, motorTime: number) {
     basic.showString("F")
     pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
     pins.digitalWritePin(DigitalPin.P8, 1)
@@ -40,16 +46,8 @@ function goForward (motorSpeed: number, motorTime: number) {
     pins.analogWritePin(AnalogPin.P1, 0)
     basic.clearScreen()
 }
-input.onButtonPressed(Button.A, function () {
-    goForward(100, 3)
-    basic.showString("")
-    goBackward(100, 3)
-    basic.showString("")
-    goRight(100, 1)
-    basic.showString("")
-    goLeft(100, 1)
-})
-function goRight (motorSpeed: number, motorTime: number) {
+
+export function goRight (motorSpeed: number, motorTime: number) {
     basic.showString("R")
     pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
     pins.digitalWritePin(DigitalPin.P8, 0)
@@ -66,7 +64,7 @@ function goRight (motorSpeed: number, motorTime: number) {
     pins.analogWritePin(AnalogPin.P1, 0)
     basic.clearScreen()
 }
-function goLeft (motorSpeed: number, motorTime: number) {
+export function goLeft (motorSpeed: number, motorTime: number) {
     basic.showString("L")
     pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
     pins.digitalWritePin(DigitalPin.P8, 1)
@@ -83,15 +81,7 @@ function goLeft (motorSpeed: number, motorTime: number) {
     pins.analogWritePin(AnalogPin.P1, 0)
     basic.clearScreen()
 }
-input.onButtonPressed(Button.B, function () {
-    basic.showNumber(getDistance())
-})
-let calculatedDistance = 0
-let echoTime = 0
-namespace Lilybot.movement{}
-namespace Lilybot.movement{
 }
-basic.showString("ON")
-basic.forever(function () {
-	
-})
+
+
+
