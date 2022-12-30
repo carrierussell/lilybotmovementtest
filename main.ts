@@ -84,19 +84,19 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
     //%block="ultrasonic distance"
      //% color=#00008b
     export function getDistance(){
-        let echoTime = 0
-        let calculatedDistance = 0
+       let distance = 0
 
         basic.forever(function(){
+        pins.digitalWritePin(DigitalPin.P19,0)
+        basic.pause(10)
         pins.digitalWritePin(DigitalPin.P19,1)
         basic.pause(10)
         pins.digitalWritePin(DigitalPin.P19,0)
-        basic.pause(10)
-        
-        echoTime = pins.pulseIn(DigitalPin.P20, PulseValue.High)
-        calculatedDistance = Math.idiv(echoTime,148)
-        return calculatedDistance
-        })
+                
+        distance = (pins.pulseIn(DigitalPin.P20, PulseValue.High))/58
+        basic.showNumber(distance)
+        basic.pause(100)
+         })
     }
 
 }
