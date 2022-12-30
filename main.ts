@@ -1,90 +1,51 @@
 namespace Lilybot.movement{
-
-let calculatedDistance = 0
-let echoTime = 0
-//% blockId=Lilybotultrasonic
-export function getDistance() {
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    echoTime = pins.pulseIn(DigitalPin.P14, PulseValue.High)
-    calculatedDistance = echoTime / 148
-    return calculatedDistance
-}
-//% blockId=LilybotBackward
-//% block= "Backward at $index speed, for $secindex sec"
-//% index.min=0 index.max=100
-//% secindex.min=0 index.max=10
-export function goBackward (motorSpeed: number, motorTime: number) {
-    basic.showString("B")
-    pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
+export function goBackward(motorSpeed: number, motorTime: number) {
+    pins.analogWritePin(AnalogPin.P0, motorSpeed)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.analogWritePin(AnalogPin.P1, motorSpeed * 10.23)
+    pins.analogWritePin(AnalogPin.P1, motorSpeed)
     pins.digitalWritePin(DigitalPin.P15, 0)
     pins.digitalWritePin(DigitalPin.P16, 1)
-    basic.pause(motorTime * 1000)
+    basic.pause(motorTime)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P9, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P15, 0)
     pins.digitalWritePin(DigitalPin.P16, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
-    basic.clearScreen()
-}
-export function goForward (motorSpeed: number, motorTime: number) {
-    basic.showString("F")
-    pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
-    pins.digitalWritePin(DigitalPin.P8, 1)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.analogWritePin(AnalogPin.P1, motorSpeed * 10.23)
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    pins.digitalWritePin(DigitalPin.P16, 0)
-    basic.pause(motorTime * 1000)
-    pins.digitalWritePin(DigitalPin.P8, 0)
-    pins.digitalWritePin(DigitalPin.P9, 0)
-    pins.analogWritePin(AnalogPin.P0, 0)
-    pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 0)
-    pins.analogWritePin(AnalogPin.P1, 0)
-    basic.clearScreen()
 }
 
-export function goRight (motorSpeed: number, motorTime: number) {
-    basic.showString("R")
-    pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
+function goForward(motorSpeed2: number, motorTime2: number) {
+    pins.analogWritePin(AnalogPin.P0, motorSpeed2)
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    pins.digitalWritePin(DigitalPin.P13, 0)
+    pins.analogWritePin(AnalogPin.P1, motorSpeed2)
+    pins.digitalWritePin(DigitalPin.P15, 1)
+    pins.digitalWritePin(DigitalPin.P16, 0)
+    basic.pause(motorTime2)
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    pins.digitalWritePin(DigitalPin.P9, 0)
+    pins.analogWritePin(AnalogPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P15, 0)
+    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.analogWritePin(AnalogPin.P1, 0)
+}
+
+function goRight(motorSpeed3: number, motorTime3: number) {
+    pins.analogWritePin(AnalogPin.P0, motorSpeed3)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.analogWritePin(AnalogPin.P1, motorSpeed * 10.23)
+    pins.analogWritePin(AnalogPin.P1, motorSpeed3)
     pins.digitalWritePin(DigitalPin.P15, 1)
     pins.digitalWritePin(DigitalPin.P16, 0)
-    basic.pause(motorTime * 1000)
+    basic.pause(motorTime3)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P9, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P15, 0)
     pins.digitalWritePin(DigitalPin.P16, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
-    basic.clearScreen()
-}
-export function goLeft (motorSpeed: number, motorTime: number) {
-    basic.showString("L")
-    pins.analogWritePin(AnalogPin.P0, motorSpeed * 10.23)
-    pins.digitalWritePin(DigitalPin.P8, 1)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.analogWritePin(AnalogPin.P1, motorSpeed * 10.23)
-    pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 1)
-    basic.pause(motorTime * 1000)
-    pins.digitalWritePin(DigitalPin.P8, 0)
-    pins.digitalWritePin(DigitalPin.P9, 0)
-    pins.analogWritePin(AnalogPin.P0, 0)
-    pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 0)
-    pins.analogWritePin(AnalogPin.P1, 0)
-    basic.clearScreen()
 }
 }
-
 
 
