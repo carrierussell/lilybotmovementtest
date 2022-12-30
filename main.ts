@@ -1,8 +1,8 @@
 namespace Lilybot.movement {
     //%blockId=Lilybot_Movement
-    //%block="Backward at $index ""
+    //%block="Backward at $index "
     //%index.min=0 index.max=100
-    //% speed"
+    //% speed for $secindex "
     //%secindex.min=0 secindex.max=10 
 export function goBackward(motorSpeed: number, motorTime: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeed)
