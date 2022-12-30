@@ -75,5 +75,19 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
         pins.digitalWritePin(DigitalPin.P16, 0)
         pins.analogWritePin(AnalogPin.P1, 0)
     }
+    //%blockId=Lilybot_MovementD
+    //%block="ultrasonic distance"
+    export function getDistance(){
+        pins.digitalWritePin(DigitalPin.P19,1)
+        basic.pause(10)
+        pins.digitalWritePin(DigitalPin.P19,0)
+
+        let echoTime = 0
+        let calculatedDistance = 0
+        echoTime = pins.pulseIn(DigitalPin.P20, PulseValue.High)
+        calculatedDistance = echoTime/148
+        return calculatedDistance
+    }
+
 }
 
