@@ -3,6 +3,16 @@
 
 ## Use as Extension
 
+### Use as block extension for the Lilybot robot with a PCB board
+
+'''Blocks
+for (let index = 0; index < 4; index++) {
+    Lilybot.movement.goForward(100, 3)
+    Lilybot.movement.stop()
+    Lilybot.movement.goRight(100, 1)
+}
+'''
+
 This repository can be added as an **extension** in MakeCode.
 
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)

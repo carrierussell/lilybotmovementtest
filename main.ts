@@ -91,6 +91,7 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
         pins.digitalWritePin(DigitalPin.P15, 0)
         pins.digitalWritePin(DigitalPin.P14, 0)
     }
+
     //%blockId=Lilybot_MovementD
     //%block="show ultrasonic distance"
     //% color=#00008b
@@ -103,18 +104,11 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
         control.waitMicros(10)
         pins.digitalWritePin(DigitalPin.P2, 0)
 
-         basic.showNumber(Math.round(pins.pulseIn(DigitalPin.P10, PulseValue.High)/ 58))
+         let distance=(Math.round(pins.pulseIn(DigitalPin.P3, PulseValue.High)/ 58))
         //basic.showNumber(distance)
             
-        //return distance
-        }
+        return distance
+    }
     
-      
-
-        
-        
-            
-
-
-}
+ }
 
