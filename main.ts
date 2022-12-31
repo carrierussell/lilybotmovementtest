@@ -11,13 +11,13 @@ export function goBackward(motorSpeedB: number, motorTimeB: number) {
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.analogWritePin(AnalogPin.P1, motorSpeedB*10.23)
     pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 1)
+    pins.digitalWritePin(DigitalPin.P14, 1)
     basic.pause(motorTimeB*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P14, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
  //%blockId=Lilybot_MovementF
@@ -31,13 +31,13 @@ export function goForward(motorSpeedF: number, motorTimeF: number) {
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P1, motorSpeedF*10.23)
     pins.digitalWritePin(DigitalPin.P15, 1)
-    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P14, 0)
     basic.pause(motorTimeF*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P14, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
 //%blockId=Lilybot_MovementR
@@ -51,13 +51,13 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.analogWritePin(AnalogPin.P1, motorSpeedR*10.23)
     pins.digitalWritePin(DigitalPin.P15, 1)
-    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P14, 0)
     basic.pause(motorTimeR*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P14, 0)
     pins.analogWritePin(AnalogPin.P1, 0)
 }
     //%blockId=Lilybot_MovementL
@@ -71,13 +71,13 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
         pins.digitalWritePin(DigitalPin.P13, 0)
         pins.analogWritePin(AnalogPin.P1, motorSpeedL*10.23)
         pins.digitalWritePin(DigitalPin.P15, 0)
-        pins.digitalWritePin(DigitalPin.P16, 1)
+        pins.digitalWritePin(DigitalPin.P14, 1)
         basic.pause(motorTimeL*1000)
         pins.digitalWritePin(DigitalPin.P8, 0)
         pins.digitalWritePin(DigitalPin.P13, 0)
         pins.analogWritePin(AnalogPin.P0, 0)
         pins.digitalWritePin(DigitalPin.P15, 0)
-        pins.digitalWritePin(DigitalPin.P16, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
         pins.analogWritePin(AnalogPin.P1, 0)
     }
     //%blockId=Lilybot_MovementS
@@ -89,25 +89,31 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
         pins.digitalWritePin(DigitalPin.P13, 0)
         pins.analogWritePin(AnalogPin.P1, 0)
         pins.digitalWritePin(DigitalPin.P15, 0)
-        pins.digitalWritePin(DigitalPin.P16, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
     //%blockId=Lilybot_MovementD
     //%block="show ultrasonic distance"
     //% color=#00008b
     export function getDistance() {
-         let distance = 0
-            pins.analogSetPeriod(AnalogPin.P2, 100)
-            distance = Math.idiv(pins.pulseIn(DigitalPin.P19, PulseValue.High), 58)
-            //basic.showNumber(distance)
-            
-        return distance
-        }
+        
+        pins.setPull(DigitalPin.P2, PinPullMode.PullNone)
+        pins.digitalWritePin(DigitalPin.P2, 0)
+        control.waitMicros(2)
+        pins.digitalWritePin(DigitalPin.P2, 1)
+        control.waitMicros(10)
+        pins.digitalWritePin(DigitalPin.P2, 0)
 
+         basic.showNumber(Math.round(pins.pulseIn(DigitalPin.P10, PulseValue.High)/ 58))
+        //basic.showNumber(distance)
+            
+        //return distance
+        }
+    
       
 
         
         
-   
+            
 
 
 }
