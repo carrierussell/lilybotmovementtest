@@ -80,30 +80,34 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
         pins.digitalWritePin(DigitalPin.P16, 0)
         pins.analogWritePin(AnalogPin.P1, 0)
     }
+    //%blockId=Lilybot_MovementS
+    //%block="Stop Robot"
+    //% color=#00008b
+    export function stop() {
+        pins.analogWritePin(AnalogPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P8, 0)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.analogWritePin(AnalogPin.P1, 0)
+        pins.digitalWritePin(DigitalPin.P15, 0)
+        pins.digitalWritePin(DigitalPin.P16, 0)
+    }
     //%blockId=Lilybot_MovementD
     //%block="show ultrasonic distance"
     //% color=#00008b
     export function getDistance() {
-       let distance = 0
+         let distance = 0
+            pins.analogSetPeriod(AnalogPin.P2, 100)
+            distance = Math.idiv(pins.pulseIn(DigitalPin.P19, PulseValue.High), 58)
+            //basic.showNumber(distance)
+            
+        return distance
+        }
 
-        basic.forever(function(){
-        pins.digitalWritePin(DigitalPin.P2,0)
-        basic.pause(10)
-        pins.digitalWritePin(DigitalPin.P2,1)
-        basic.pause(10)
-        pins.digitalWritePin(DigitalPin.P2,0)
-                
-        distance = Math.idiv(pins.pulseIn(DigitalPin.P19, PulseValue.High),58)
-        //basic.showNumber(distance)
-        basic.pause(100)
+      
 
-         })
-         return distance
-    }
-    //% blockId = Lilybot_MovementD1
-    //% block = "ultrasonic distance"
-    //% blockAliasFor="Lilybot_MovementD"
-           
+        
+        
+   
 
 
 }
