@@ -47,11 +47,11 @@ export function goForward(motorSpeedF: number, motorTimeF: number) {
      //% color=#00008b
 export function goRight(motorSpeedR: number, motorTimeR: number) {
     pins.analogWritePin(AnalogPin.P0, motorSpeedR*10.23)
-    pins.digitalWritePin(DigitalPin.P8, 0)
-    pins.digitalWritePin(DigitalPin.P13, 1)
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    pins.digitalWritePin(DigitalPin.P13, 0)
     pins.analogWritePin(AnalogPin.P1, motorSpeedR*10.23)
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    pins.digitalWritePin(DigitalPin.P14, 0)
+    pins.digitalWritePin(DigitalPin.P15, 0)
+    pins.digitalWritePin(DigitalPin.P14, 1)
     basic.pause(motorTimeR*1000)
     pins.digitalWritePin(DigitalPin.P8, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
@@ -67,11 +67,11 @@ export function goRight(motorSpeedR: number, motorTimeR: number) {
      //% color=#00008b
     export function goLeft(motorSpeedL: number, motorTimeL: number) {
         pins.analogWritePin(AnalogPin.P0, motorSpeedL*10.23)
-        pins.digitalWritePin(DigitalPin.P8, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P8, 0)
+        pins.digitalWritePin(DigitalPin.P13, 1)
         pins.analogWritePin(AnalogPin.P1, motorSpeedL*10.23)
-        pins.digitalWritePin(DigitalPin.P15, 0)
-        pins.digitalWritePin(DigitalPin.P14, 1)
+        pins.digitalWritePin(DigitalPin.P15, 1)
+        pins.digitalWritePin(DigitalPin.P14, 0)
         basic.pause(motorTimeL*1000)
         pins.digitalWritePin(DigitalPin.P8, 0)
         pins.digitalWritePin(DigitalPin.P13, 0)
